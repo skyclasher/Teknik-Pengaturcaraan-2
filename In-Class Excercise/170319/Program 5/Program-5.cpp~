@@ -22,12 +22,12 @@ int main()
 	
 	cout << "Enter the employee`s name : ";
 	cin.ignore();
-	cin.getline(employee.name, SIZE)
+	cin.getline(employee.name, SIZE);
 	
 	cout << "How many hours did the employee work ? ";
 	cin >> employee.hours;
 	
-	cout << "What is the eemployee's hourly pay rate ? ";
+	cout << "What is the employee's hourly pay rate ? ";
 	cin >> employee.payRate;
 	
 	employee.grossPay = employee.hours * employee.payRate;
