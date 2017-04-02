@@ -2,46 +2,76 @@
 #include<iomanip>
 using namespace std;
 
-int Pelajar[5][3];
+void getData();
+int calculateData();
+
+int Pasukan[3][4];
 
 int main()
 {
+	bacaData();
 	
-	
+	int point, totalPoints;
+	for(int i=0; i<4; i++){
+		totalPoints = 0;
+		cout << "Team" << i+1 << " : " << endl;	
+		for(int j=0; j<3; j++){
+			point = 0;
+			switch(i){
+				case 0 : point = calculateData();	
+						 break;
+				case 1 : cout << "Silver : " << " :";	
+						 cin >> Pasukan[i][j];
+						 break;  
+				case 2 : cout << "Bronze : " << " :";	
+						 cin >> Pasukan[i][j];
+						 break;
+			}
+			totalPoints += point;
+		}
+		cout << "Team" << i+1 << " points : " << totalPoints << endl;	
+	}
 }
 
-void bacaData()
+int calculateData()
 {
-	cout << "Please enter the quiz data (separeted by spaces) for each student :" << endl;
+	int total=0, point;
 	
-	for(int i=0; i<5; i++){
-		cout << "Student " << i " :" << endl;
-		for(int j=0; j<3; j++){
-			cin >> Pelajar[i][j] >> Pelajar[i][j] >> Pelajar[i][j];
+	for(int i=0; i<3; i++){
+		switch(i){
+			case 0 : point = 3;
+					 break;
+			case 1 : point = 2;
+					 break;  
+			case 2 : point = 1;
+					 break;
 		}
+		total += point;
 	}
 	
-	cout << endl << endl << "Output : " << endl;	
-	
-	
-	for(int i=0; i<5; i++){
-		for(int j=0; j<3; j++){
-			cout << Pelajar[i][j] << Pelajar[i][j] << Pelajar[i][j];
-		}
-	}
+	return total;
 }
 
-double kiraMarkah()
+void getData()
 {
-	int studentMarks, totalMarks = 0;
-	for(int i=0; i<5; i++){
-		cout << "Markah Student " << i " :";
-		for(int j=0; j<3; j++){
-			studentMarks = Pelajar[i][j] + Pelajar[i][j] + Pelajar[i][j];
-			totalMarks += studentMarks;
-			
-			cout << studentMarks;
+	cout << "Please enter the medal count :" << endl;
+	
+	for(int j=0; j<4; j++){
+		cout << "Team" << j+1 << " : " << endl;	
+		for(int i=0; i<3; i++){
+			switch(i){
+				case 0 : cout << "Gold : ";	
+						 cin >> Pasukan[i][j];
+						 break;
+				case 1 : cout << "Silver : ";	
+						 cin >> Pasukan[i][j];
+						 break;  
+				case 2 : cout << "Bronze : ";	
+						 cin >> Pasukan[i][j];
+						 break;
+			}
+			cout << endl << endl;
 		}
-	}
-	return totalMarks
+	}	
 }
+

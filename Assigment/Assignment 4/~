@@ -1,0 +1,24 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	char choices[1]; 
+	
+	while(choices == 'R'){
+	
+		cout << "Do you want to repeat the program or quit ? Press R to repeat or Q to quit.";
+		cin >> choices;
+	
+		if(choices != 'R' || choices != 'Q'){
+			cout << "You have not entered correct command";
+			choices = 'R';
+		}
+	
+		if(choices == 'Q'){
+			break;
+		}	
+	}
+  
+	return 0;
+}
