@@ -1,0 +1,28 @@
+#include<iostream>
+#include<fstream>
+
+using namespace std;
+
+int main()
+{
+	
+	const int SIZE = 81;
+	char input[SIZE];
+	fstream nameFile;
+	
+	nameFile.open ("murphy.txt",ios::in);
+	if(!nameFile)
+	{
+		cout<<"Error, cant open file.\n";
+		return 0;
+	}
+	
+	nameFile.getline(input,SIZE);
+	while (!nameFile.eof())
+	{
+		cout<<input<<endl;
+		nameFile.getline(input,SIZE);	
+	}
+	nameFile.close();
+	return 0;
+}
