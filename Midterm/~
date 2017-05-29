@@ -1,0 +1,23 @@
+// Program 3b
+#include <iostream>
+#include <iomanip>
+using namespace std;
+struct ShoeType
+{ string style;
+ double price; };
+int main()
+{ ShoeType shoe1, shoe2, *s1, *s2;
+ s1 = &shoe1;
+ s2 = &shoe2;
+
+ cout << fixed << setprecision(2);
+ shoe1.style = "Sandal";
+ shoe1.price = 98.98;
+ cout << s1->style << "\t" << " RM" << s1->price << endl;
+ *s2 = *s1;
+ //Put shoe2 on sale!
+ s2->style = "Slipper";
+ s2->price = (*s1).price*50/100;
+ cout << shoe2.style <<"\t"<< " RM" << shoe2.price << endl;
+
+return 0; }

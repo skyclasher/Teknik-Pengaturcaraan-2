@@ -7,12 +7,14 @@ void getData(string word);
 int main()
 {
 	char choice = 'y';
-	
+	int count = 0;
 	while(choice == 'y' || choice == 'Y'){
+		count++;
 		string word = "";
 		
 		cout << "Please enter word beautiful : ";
-		cin.get();
+		if(count>1)
+			cin.get();
 		getline(cin,word);
 		
 		getData(word);
